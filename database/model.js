@@ -1,6 +1,5 @@
 const { Sequelize, Model, DataTypes } = require('sequelize');
 require('dotenv').config();
-//const sequelize = new Sequelize('postgresql://bollini:IKx9ECyNttst67_q7pb2rg@oval-possum-5085.7tc.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full');
 
 //Local postgresql db connection
 /**const sequelize = new Sequelize('envisioningv2', 'bollini', 'password', {
@@ -8,7 +7,12 @@ require('dotenv').config();
     dialect: 'postgres'
 });*/
 
-const sequelize=new Sequelize(process.env.DATABASE_URL);
+//const sequelize=new Sequelize(process.env.DATABASE_URL);
+
+const sequelize = new Sequelize('ackowsjn', 'ackowsjn', 'UUe8TDXE-rQs2TzH2ghpgTBjA9c0cvPI', {
+    host: 'rogue.db.elephantsql.com',
+    dialect: 'postgres'
+});
 
 sequelize
     .authenticate()
