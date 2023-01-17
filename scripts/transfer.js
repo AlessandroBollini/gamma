@@ -9,10 +9,10 @@ async function main() {
     const signer = new ethers.Wallet(process.env.PRIVATE_KEY, provider);
     const abi = contract.abi;
     const wallet = process.env.WALLET;
-    const myNftContract = new ethers.Contract(process.env.CONTRACT, abi, signer);
-    const level = 1;
     const userWallet = process.env.USERWALLET;
     const userEmail = process.env.EMAIL;
+    const myNftContract = new ethers.Contract(process.env.CONTRACT, abi, signer);
+    const level = 1;
     await controller.addUser(userWallet, userEmail, level);
     const userInfo = await controller.findUser(userWallet);
     let nftTxn = await myNftContract['safeTransferFrom(address,address,uint256)'](wallet, userWallet, userInfo.id);

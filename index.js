@@ -24,7 +24,7 @@ app.post('/', encodeUrl, async (req, res) => {
     try {
         if (alreadyExist == 0) {
             await exec('node scripts/transfer.js', {
-                env: { USERWALLET: req.body.userAddress, EMAIL: req.body.email,ALCHEMY_MUMBAI_KEY:process.env.ALCHEMY_MUMBAI_KEY ,PRIVATE_KEY: process.env.PRIVATE_KEY, CONTRACT: process.env.CONTRACT, WALLET: process.env.WALLET }, function(error, stdout, stderr) {
+                env: { USERWALLET: req.body.userAddress, EMAIL: req.body.email, ALCHEMY_MUMBAI_KEY:process.env.ALCHEMY_MUMBAI_KEY ,PRIVATE_KEY: process.env.PRIVATE_KEY, CONTRACT: process.env.CONTRACT, WALLET: process.env.WALLET }, function(error, stdout, stderr) {
                     if (error !== null) {
                         console.log('exec error: ', error);
                     }
@@ -37,7 +37,7 @@ app.post('/', encodeUrl, async (req, res) => {
             const id = await controller.findUser(req.body.userAddress);
             if (checkLevel == 0) {
                 await exec('node scripts/levelUp.js', {
-                    env: { TOKEN_ID: id.id, USERWALLET: id.wallet }, function(error, stdout, stderr) {
+                    env: { TOKEN_ID: id.id, USERWALLET: id.wallet, ALCHEMY_MUMBAI_URL: process.env.ALCHEMY_MUMBAI_URL, ALCHEMY_MUMBAI_KEY:process.env.ALCHEMY_MUMBAI_KEY ,PRIVATE_KEY: process.env.PRIVATE_KEY, CONTRACT: process.env.CONTRACT, WALLET: process.env.WALLET }, function(error, stdout, stderr) {
                         if (error !== null) {
                             console.log('exec error: ', error);
                         }
