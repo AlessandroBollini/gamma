@@ -24,7 +24,7 @@ app.post('/', encodeUrl, async (req, res) => {
     try {
         if (alreadyExist == 0) {
             await exec('node scripts/transfer.js', {
-                env: { USERWALLET: req.body.userAddress, EMAIL: req.body.email }, function(error, stdout, stderr) {
+                env: { USERWALLET: req.body.userAddress, EMAIL: req.body.email,ALCHEMY_MUMBAI_KEY:process.env.ALCHEMY_MUMBAI_KEY ,PRIVATE_KEY: process.env.PRIVATE_KEY, CONTRACT: process.env.CONTRACT, WALLET: process.env.WALLET }, function(error, stdout, stderr) {
                     if (error !== null) {
                         console.log('exec error: ', error);
                     }
