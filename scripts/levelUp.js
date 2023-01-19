@@ -2,7 +2,7 @@ require("dotenv").config();
 const controller = require('../database/controller');
 const alch = require('alchemy-sdk');
 const ethers = require('ethers');
-const contract = require("../artifacts/contracts/Env23.sol/Env23.json");
+const contract = require("../artifacts/contracts/TestEnv.sol/TestEnv.json");
 
 async function main() {
   const alchemy = new alch.Alchemy({ apiKey: process.env.ALCHEMY_MUMBAI_KEY, network: alch.Network.MATIC_MUMBAI, maxRetries: 30 });

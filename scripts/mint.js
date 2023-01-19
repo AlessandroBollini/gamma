@@ -4,7 +4,7 @@ const web3Provider = new Web3.providers.HttpProvider(process.env.ALCHEMY_MUMBAI_
 let web3 = new Web3(web3Provider);
 const contract = process.env.CONTRACT;
 const wallet = process.env.WALLET;
-const users = 20;
+const users = 80;
 
 async function main() {
   for (let i = 1; i <= users; i++) {
@@ -17,7 +17,7 @@ async function main() {
 async function mint() {
   const binLevel=0;
   const level=parseInt(binLevel,2);
-  const nft = await hre.ethers.getContractAt("Env23", contract);
+  const nft = await hre.ethers.getContractAt("TestEnv", contract);
   await nft.safeMint(wallet, level, {
     nonce: web3.eth.getTransactionCount(process.env.WALLET, 'pending'),
   });

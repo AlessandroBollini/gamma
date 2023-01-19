@@ -7,7 +7,7 @@ module.exports = {
     mumbai:{
       url: process.env.ALCHEMY_MUMBAI_URL,
       accounts:[process.env.PRIVATE_KEY],
-      timeout: 150000000
+      timeout: 1500000000
     }
   }
 };

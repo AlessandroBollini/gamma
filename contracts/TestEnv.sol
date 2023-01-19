@@ -5,7 +5,7 @@ pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
-contract Env23 is ERC721, ERC721URIStorage {
+contract TestEnv is ERC721, ERC721URIStorage {
 
     using Counters for Counters.Counter;
 
@@ -17,7 +17,7 @@ contract Env23 is ERC721, ERC721URIStorage {
         "https://ipfs.io/ipfs/QmdYTqUAhvEW7itYHGtbtSrDWsSp1WDfr2tPaYqFSs4hY2"
     ]; 
 
-    constructor() ERC721("Env23", "E23") {}
+    constructor() ERC721("TestEnv", "TE1") {}
 
     function performUpkeep(uint256 _tokenId,uint256 _level) external {
             levelUp(_tokenId,_level);

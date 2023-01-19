@@ -1,8 +1,8 @@
 async function main() {
-  const Env23 = await hre.ethers.getContractFactory("Env23");
-  const nft = await Env23.deploy();
+  const TestEnv = await hre.ethers.getContractFactory("TestEnv");
+  const nft = await TestEnv.deploy();
   await nft.deployed();
-  console.log("Env23 deployed to:", nft.address);
+  console.log("TestEnv deployed to:", nft.address);
 }
 
 main()

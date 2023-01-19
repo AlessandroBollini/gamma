@@ -1,7 +1,7 @@
 const controller = require('../database/controller');
 require('dotenv').config();
 const ethers = require('ethers');
-const contract = require("../artifacts/contracts/Env23.sol/Env23.json");
+const contract = require("../artifacts/contracts/TestEnv.sol/TestEnv.json");
 
 //Chiaramente il livello va aggiornato prima di ogni evento, qui è solo indicato lo 0 come livello del primo evento
 async function main() {

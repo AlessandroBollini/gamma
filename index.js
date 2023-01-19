@@ -19,7 +19,7 @@ app.get('/', (_req, res) => {
 });
 
 app.post('/', encodeUrl, async (req, res) => {
-    const levelLenght = 1;
+    const levelLenght = 0;
     const alreadyExist = await controller.checkUser(req.body.userAddress);
     try {
         if (alreadyExist == 0) {
