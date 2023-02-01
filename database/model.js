@@ -9,8 +9,13 @@ require('dotenv').config();
 
 //const sequelize=new Sequelize(process.env.DATABASE_URL);
 
-const sequelize = new Sequelize('ackowsjn', 'ackowsjn', 'UUe8TDXE-rQs2TzH2ghpgTBjA9c0cvPI', {
+/**const sequelize = new Sequelize('ackowsjn', 'ackowsjn', 'UUe8TDXE-rQs2TzH2ghpgTBjA9c0cvPI', {
     host: 'rogue.db.elephantsql.com',
+    dialect: 'postgres'
+});*/
+
+const sequelize = new Sequelize('bollini', 'bollini', 'password', {
+    host: '172.19.80.1',
     dialect: 'postgres'
 });
 
